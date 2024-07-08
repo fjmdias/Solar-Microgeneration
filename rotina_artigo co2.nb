@@ -1,0 +1,501 @@
+Notebook[{Cell[
+TextData[{"CONFIGURA\[CapitalCCedilla]\[CapitalOTilde]ES"," ","INICIAIS"}],
+"Text",ExpressionUUID -> "89c67a6c-fe4e-4503-91e1-d9201c2e5c1b",FontWeight -> Bold],Cell[
+BoxData[
+{RowBox[{"Clear","[","\"Global`*\"","]"}],"\n",RowBox[{RowBox[{"SetDirectory","[",RowBox[
+{"NotebookDirectory","[","]"}],"]"}],";"}],"\n",RowBox[{RowBox[{"SetOptions","[",RowBox[
+{RowBox[{"{",RowBox[{"ListPlot",","," ","ListLogPlot",","," ","ListLinePlot",","," ","ListLogLinearPlot",",","ListLogLogPlot"}],"}"}],","," ",RowBox[
+{"BaseStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],","," ",RowBox[{"Joined"," ","\[Rule]"," ","True"}],","," ",RowBox[
+{"PlotStyle"," ","\[Rule]"," ","Thick"}],","," ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}]}],"]"}],";"}],"\n",RowBox[{RowBox[{"SetOptions","[",RowBox[
+{RowBox[{"{",RowBox[{"BarChart",","," ","DateListPlot"}],"}"}],","," ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}]}],"]"}],";"}]}],"Input",CellLabel -> "In[99]:= ",
+ExpressionUUID -> "2ce958cc-78c1-4fe2-9492-2735152f6706"],Cell[
+TextData[{"DADOS"," ","EXTRAIDOS"," ","DO"," ","ARQUIVO"," ","BASE"}],
+"Text",ExpressionUUID -> "394e17b7-729f-4231-b238-1c184cd976de",FontWeight -> Bold],Cell[
+BoxData[
+{RowBox[{RowBox[{"Irdlat"," ","="," ",RowBox[{"{",RowBox[{"5.29",","," ","5.41",","," ","5.38",","," ","4.56",","," ","4.76",","," ","4.14",","," ","4.85",","," ","4.77",","," ","4.47",","," ","4.74",","," ","\n","   ","4.85",","," ","5.01"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"Irdpla"," ","="," ",RowBox[{"{",RowBox[{"5.86",","," ","5.67",","," ","5.22",","," ","4.06",","," ","3.83",","," ","3.22",","," ","3.78",","," ","4.06",","," ","4.22",","," ","4.86",","," ","\n","   ","5.28",","," ","5.61"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"mlatm"," ","="," ",RowBox[{"Sum","[",RowBox[{RowBox[{RowBox[{"Irdlat","[",RowBox[
+{"[","i","]"}],"]"}],"/",RowBox[{"Length","[","Irdlat","]"}]}],","," ",RowBox[{"{",RowBox[
+{"i",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"mplam"," ","="," ",RowBox[
+{"Sum","[",RowBox[{RowBox[{RowBox[{"Irdpla","[",RowBox[{"[","i","]"}],"]"}],"/",RowBox[
+{"Length","[","Irdpla","]"}]}],","," ",RowBox[{"{",RowBox[{"i",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"mdlat"," ","="," ",RowBox[{"Table","[",RowBox[{"mlatm",","," ",RowBox[{"{",RowBox[
+{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"mdpla"," ","="," ",RowBox[
+{"Table","[",RowBox[{"mplam",","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"idtpl"," ","="," ",RowBox[{"DateListPlot","[",RowBox[{RowBox[{"{",RowBox[
+{"Irdlat",","," ","Irdpla",","," ","mdlat",","," ","mdpla"}],"}"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","\n","   ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Average irradiance (kWh/m\.b2.day)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Latitude angle\"",","," ","\"Horizontal plane angle\"",","," ","\n","      ","\"Average of latitude\"",","," ","\n","      ","\"Average of horizontal plane\""}],"}"}],"]"}],","," ",RowBox[
+{"{",RowBox[{".6",","," ",".83"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}],","," ",RowBox[{"PlotRange"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}]}],
+"Input",CellLabel -> "In[103]:= ",ExpressionUUID -> "903e0ea8-4db4-419a-aece-5ff2f606a3be"],Cell[
+BoxData[
+{RowBox[{"Export[\"irradia\[CCedilla]\[ATilde]o.pdf\", idtpl];"}],"\n",RowBox[{"Export[\"irradia\[CCedilla]\[ATilde]o.png\", idtpl];"}]}],
+"Input",CellLabel -> "In[110]:= ",ExpressionUUID -> "50695e6a-f93d-4fe1-afa7-15ac25ac49cf"],Cell[
+BoxData[
+{RowBox[{RowBox[{"consum"," ","="," ",RowBox[{"{",RowBox[{"886.44",","," ","804.94",","," ","951.08",","," ","944.32",","," ","493.85",","," ","444.45",","," ","485.41",","," ","\n","   ","841.64",","," ","893.42",","," ","886.88",","," ","859.3",","," ","886.41"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"charge"," ","="," ",RowBox[{"{",RowBox[{"383.93",","," ","358.4",","," ","396.75",","," ","383.98",","," ","396.78",","," ","383.98",","," ","396.78",","," ","\n","   ","396.78",","," ","383.98",","," ","396.78",","," ","383.98",","," ","396.78"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"perdcharge"," ","="," ",RowBox[{"{",RowBox[{"7.6787",","," ","7.1679",","," ","7.935",","," ","7.6797",","," ","7.9356",","," ","7.6797",","," ","7.9356",","," ","\n","   ","7.9356",","," ","7.6796",","," ","7.9356",","," ","7.6796",","," ","7.9356"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"injet"," ","="," ",RowBox[{"{",RowBox[{"1095.7",","," ","994.06",","," ","1113.6",","," ","905.06",","," ","1019.9",","," ","845.87",","," ","1053.2",","," ","\n","   ","997.69",","," ","921.67",","," ","1022.6",","," ","987.64",","," ","1058.8"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"absorv"," ","="," ",RowBox[{"{",RowBox[{"1169",","," ","1068.6",","," ","1256.1",","," ","1259.7",","," ","840.44",","," ","786.02",","," ","833.18",","," ","\n","   ","1172.2",","," ","1207.2",","," ","1209.2",","," ","1161",","," ","1185.2"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"autocons"," ","="," ",RowBox[{"{",RowBox[{"102.1",","," ","95.378",","," ","92.529",","," ","69.434",","," ","51.032",","," ","43.245",","," ","49.887",","," ","\n","   ","67.012",","," ","70.943",","," ","75.351",","," ","83.117",","," ","98.771"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"conex"," ","="," ",RowBox[{"Table","[",RowBox[{"100",","," ",RowBox[{"{",RowBox[
+{"i",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}]}],"Input",CellLabel -> "In[112]:= ",
+ExpressionUUID -> "8a2b514e-790f-433a-b955-ced0d5b1847b"],Cell[
+BoxData[{RowBox[{RowBox[
+{"blc00"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[{"injet","[",RowBox[
+{"[","n","]"}],"]"}]," ","-"," ",RowBox[{"absorv","[",RowBox[{"[","n","]"}],"]"}]}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[
+{"excedplt00"," ","="," ","\n","  ",RowBox[{"BarChart","[",RowBox[{RowBox[{"blc00","/","100"}],","," ","\n","   ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","     ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{","Black","}"}]}],","," ","\n","   ",RowBox[
+{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ",RowBox[{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","   ",RowBox[
+{"BaseStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","   ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","   ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],","," ","\n","   ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ","\n","     ",RowBox[{"HoldForm","[","\"Active energy difference (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","   ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"balanco01"," ","="," ",RowBox[{"Show","[",RowBox[{RowBox[{"{","\n","   ",RowBox[
+{"excedplt00",",","\n","   ",RowBox[{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","Dashed",","," ",RowBox[
+{"Line","[",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{".55",","," ",RowBox[{"-","1"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"12",","," ",RowBox[{"-","1"}]}],"}"}]}],"}"}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{RowBox[{"Arrowheads","[",".03","]"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ","\n","      ",RowBox[{"Arrow","[",RowBox[{RowBox[{"{",RowBox[
+{RowBox[{"{",RowBox[{"8",","," ",RowBox[{"-","3.1"}]}],"}"}],","," ",RowBox[{"{",RowBox[
+{"6",","," ",RowBox[{"-","1"}]}],"}"}]}],"}"}],","," ","0.1"}],"]"}]}],"}"}]}],"}"}],"]"}],","," ","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Three-phase availability quota\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"9",","," ",RowBox[{"-","3.3"}]}],"}"}]}],"]"}]}],"}"}],"]"}]}],"}"}],","," ","\n","  ",RowBox[
+{"Axes"," ","\[Rule]"," ","True"}]}],"]"}]}],";"}]}],"Input",CellLabel -> "In[119]:= ",
+ExpressionUUID -> "15f203e4-d1d1-4400-ae5a-658c66262960"],Cell[
+BoxData[{RowBox[{RowBox[
+{"Export","[",RowBox[{"\"balanco01.pdf\"",","," ","balanco01"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"balanco01.png\"",","," ","balanco01"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"blc01"," ","="," ",RowBox[{"Table","[","\n","  ",RowBox[{RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"blc00","[",RowBox[{"[","n","]"}],"]"}]," ",">"," ",RowBox[{"-",RowBox[
+{"conex","[",RowBox[{"[","n","]"}],"]"}]}]}],","," ",RowBox[{"conex","[",RowBox[{"[","n","]"}],"]"}],","," ",RowBox[
+{"-",RowBox[{"blc00","[",RowBox[{"[","n","]"}],"]"}]}]}],"]"}],","," ",RowBox[{"{",RowBox[
+{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[{"bns00"," ","="," ",RowBox[
+{"Table","[","\n","  ",RowBox[{RowBox[{"If","[",RowBox[{RowBox[{RowBox[{"blc00","[",RowBox[
+{"[","n","]"}],"]"}]," ",">"," ","0"}],","," ",RowBox[{RowBox[{"blc00","[",RowBox[
+{"[","n","]"}],"]"}]," ","+"," ",RowBox[{"conex","[",RowBox[{"[","n","]"}],"]"}]}],","," ","0"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[
+{"excedplt02"," ","="," ","\n","  ",RowBox[{"BarChart","[",RowBox[{RowBox[{"blc01","/","100"}],","," ","\n","   ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","     ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ","\n","   ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[",".4","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","   ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","   ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","   ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],","," ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],","," ","\n","   ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ",RowBox[{"HoldForm","[","\"Active energy (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","   ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"excedplt03"," ","="," ","\n","  ",RowBox[{"BarChart","[",RowBox[{RowBox[
+{"bns00","/","100"}],","," ","\n","   ",RowBox[{"ChartLabels"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","     ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ","\n","   ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","0.1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","   ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","   ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","   ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],","," ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],","," ","\n","   ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ",RowBox[{"HoldForm","[","\"Active energy (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","   ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"excedplt05"," ","="," ","\n","  ",RowBox[{"BarChart","[",RowBox[{RowBox[
+{"conex","/","100"}],","," ","\n","   ",RowBox[{"ChartLabels"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","     ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ","\n","   ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","   ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","   ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","   ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],","," ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],","," ","\n","   ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ",RowBox[{"HoldForm","[","\"Active energy (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","   ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"balanco02"," ","="," ",RowBox[{"Show","[",RowBox[{RowBox[{"{","\n","   ",RowBox[
+{"excedplt03",",","\n","   ","excedplt02",",","\n","   ","excedplt05",",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","0.4","]"}]}],"]"}],","," ","\n","     ",RowBox[{"Rectangle","[",RowBox[
+{RowBox[{"{",RowBox[{"8",","," ","3.2"}],"}"}],","," ",RowBox[{"{",RowBox[{"8.24",","," ","3.32"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","0.1","]"}]}],"]"}],","," ","\n","     ",RowBox[{"Rectangle","[",RowBox[
+{RowBox[{"{",RowBox[{"8",","," ","3.4"}],"}"}],","," ",RowBox[{"{",RowBox[{"8.24",","," ","3.52"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","1","]"}]}],"]"}],","," ","\n","     ",RowBox[{"Rectangle","[",RowBox[
+{RowBox[{"{",RowBox[{"8",","," ","3.0"}],"}"}],","," ",RowBox[{"{",RowBox[{"8.24",","," ","3.12"}],"}"}]}],"]"}]}],"}"}],"]"}],","," ","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Availability quota/month\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"10.1",","," ","3.05"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Excess consumption/month\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"10.3",","," ","3.25"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Energy bonus/month\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"9.856",","," ","3.45"}],"}"}]}],"]"}]}],"}"}],"]"}]}],"}"}],","," ","\n","  ",RowBox[
+{"Axes"," ","\[Rule]"," ","True"}],","," ",RowBox[{"PlotRange"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}]}],
+"Input",CellLabel -> "In[122]:= ",ExpressionUUID -> "b1b6498e-7ebd-4834-b44b-43d71fdacd04"],Cell[
+BoxData[
+{RowBox[{RowBox[{"bns01"," ","=","\n"," ",RowBox[{"Table","[","\n","  ",RowBox[{RowBox[
+{"If","[",RowBox[{RowBox[{RowBox[{"blc00","[",RowBox[{"[","n","]"}],"]"}]," ","<"," ","0"}],",","\n","   ",RowBox[
+{"If","[",RowBox[{RowBox[{RowBox[{"blc00","[",RowBox[{"[","n","]"}],"]"}]," ",">"," ",RowBox[
+{"-",RowBox[{"conex","[",RowBox[{"[","n","]"}],"]"}]}]}],","," ","0",","," ",RowBox[
+{RowBox[{"conex","[",RowBox[{"[","n","]"}],"]"}]," ","+"," ",RowBox[{"blc00","[",RowBox[
+{"[","n","]"}],"]"}]}]}],"]"}],","," ","\n","   ",RowBox[{RowBox[{"bns00","[",RowBox[
+{"[","n","]"}],"]"}]," ","-"," ",RowBox[{"conex","[",RowBox[{"[","n","]"}],"]"}]}]}],"]"}],"\n","  ",","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"tt"," ","="," ",RowBox[{"{",RowBox[{"0",","," ","0",","," ","0",","," ","0",","," ","179.459",","," ","59.85",","," ","\n","   ","220.02",","," ",RowBox[
+{"-","74.51"}],","," ",RowBox[{"-","185.53"}],","," ",RowBox[{"-","86.60"}],","," ",RowBox[
+{"-","73.36"}],","," ",RowBox[{"-","26.4"}]}],"}"}]}],";"}],"\n",RowBox[{RowBox[{"Table","[",RowBox[
+{RowBox[{RowBox[{"bns01","[",RowBox[{"[","l","]"}],"]"}]," ","+"," ",RowBox[{"Sum","[",RowBox[
+{RowBox[{"bns01","[",RowBox[{"[",RowBox[{"n"," ","-"," ","1"}],"]"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","2",","," ","l"}],"}"}]}],"]"}]}],","," ",RowBox[{"{",RowBox[
+{"l",","," ","2",","," ","12"}],"}"}]}],"]"}],";"}],RowBox[{"\n","\n"}],RowBox[{RowBox[
+{"acumul"," ","="," ","\n"," ",RowBox[{"Join","[",RowBox[{RowBox[{"{","0","}"}],","," ",RowBox[
+{"Table","[",RowBox[{RowBox[{RowBox[{"tt","[",RowBox[{"[","l","]"}],"]"}]," ","+"," ",RowBox[
+{"Sum","[",RowBox[{RowBox[{"tt","[",RowBox[{"[",RowBox[{"n"," ","-"," ","1"}],"]"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","2",","," ","l"}],"}"}]}],"]"}]}],","," ",RowBox[{"{",RowBox[
+{"l",","," ","2",","," ","12"}],"}"}]}],"]"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"excedplt04"," ","="," ","\n"," ",RowBox[{"BarChart","[",RowBox[{RowBox[
+{RowBox[{"(",RowBox[{"conex"," ","+"," ","acumul"}],")"}],"/","100"}],","," ","\n","  ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","    ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ","\n","  ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[",".1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","  ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","  ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","  ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],",","\n","  ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ",RowBox[{"HoldForm","[","\"Accumulated bunus (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","\n","    ","14"}],"}"}]}]}],"]"}]}],";"," ",RowBox[
+{"excedplt06"," ","="," ","\n"," ",RowBox[{"BarChart","[",RowBox[{RowBox[{RowBox[
+{"{",RowBox[{"100",","," ","100",","," ","143.5",","," ","347.87",","," ","100",","," ","100",","," ","100",","," ","100",","," ","100",","," ","100",","," ","100",",","\n","     ","100"}],"}"}],"/","100"}],","," ","\n","  ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","    ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ","\n","  ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","  ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","  ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","  ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],",","\n","  ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ",RowBox[{"HoldForm","[","\"Accumulated bunus (x10\.b2 kWh)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"balanco03"," ","="," ",RowBox[{"Show","[",RowBox[{RowBox[{"{","\n","   ",RowBox[
+{"excedplt04",",","\n","   ","excedplt06",",","\n","   ",RowBox[{"Graphics","[",RowBox[
+{"{",RowBox[{RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[{"Opacity","[","0.1","]"}]}],"]"}],","," ","\n","     ",RowBox[
+{"Rectangle","[",RowBox[{RowBox[{"{",RowBox[{"2",","," ","5.2"}],"}"}],","," ",RowBox[
+{"{",RowBox[{"2.2",","," ","5.4"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","1","]"}]}],"]"}],","," ","\n","     ",RowBox[{"Rectangle","[",RowBox[
+{RowBox[{"{",RowBox[{"2",","," ","5.5"}],"}"}],","," ",RowBox[{"{",RowBox[{"2.2",","," ","5.7"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Paid energy/month\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"3.69",","," ","5.59"}],"}"}]}],"]"}]}],"}"}],"]"}],",","\n","   ",RowBox[
+{"Graphics","[",RowBox[{"{",RowBox[{"Black",","," ","\n","     ",RowBox[{"Text","[",RowBox[
+{RowBox[{"Style","[",RowBox[{"\"Accumulated bouns/month\"",","," ","14"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"4.2",","," ","5.28"}],"}"}]}],"]"}]}],"}"}],"]"}]}],"}"}],","," ","\n","  ",RowBox[
+{"Axes"," ","\[Rule]"," ","True"}],","," ",RowBox[{"PlotRange"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Export","[",RowBox[{"\"balanco03.pdf\"",","," ","balanco03"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"balanco03.png\"",","," ","balanco03"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[130]:= ",ExpressionUUID -> "d61da901-1597-4acd-b656-2850ab1f2bb5"],Cell[
+BoxData[
+{RowBox[{RowBox[{"engpl02"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[
+{RowBox[{RowBox[{"{",RowBox[{"absorv",","," ","injet",","," ","autocons"}],"}"}],"/","1000"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","\n","   ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b3 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Absorved of grid\"",","," ","\"Injected on grid\"",","," ","\n","      ","\"Self-consumption\""}],"}"}],"]"}],","," ",RowBox[
+{"{",RowBox[{".7",","," ",".45"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo01.pdf\"",","," ","engpl02"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo01.png\"",","," ","engpl02"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[138]:= ",ExpressionUUID -> "f5fba8d0-476d-4bbf-a8fe-b6c606ef20ba"],Cell[
+BoxData[
+{RowBox[{"\n",RowBox[{RowBox[{"engpl05"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[
+{RowBox[{RowBox[{"{",RowBox[{RowBox[{"consum"," ","+"," ","charge"," ","+"," ","perdcharge"}],","," ",RowBox[
+{"injet"," ","+"," ","autocons"}]}],"}"}],"/","\n","   ","1000"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b3 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Required energy\"",","," ","\n","      ","\"Generated energy\""}],"}"}],"]"}],","," ",RowBox[
+{"{",RowBox[{".6",","," ",".92"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}]}],"]"}]}],";"}]}],"\n",RowBox[{RowBox[
+{"Export","[",RowBox[{"\"consumo02.pdf\"",","," ","engpl05"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo02.png\"",","," ","engpl05"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[141]:= ",ExpressionUUID -> "54f6d4dd-b534-4a62-b36a-3647a413599e"],Cell[
+BoxData[
+{RowBox[{RowBox[{"engpl04"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[
+{RowBox[{"{",RowBox[{"autocons","/","100"}],"}"}],","," ",RowBox[{"{",RowBox[{RowBox[
+{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b2 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{","\"Self-consumption\"","}"}],"]"}],","," ",RowBox[{"{",RowBox[{".6",","," ",".85"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[
+{"PlotStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"{",RowBox[{"Black",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[{"\[NonBreakingSpace]\[NonBreakingSpace]",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo03.pdf\"",","," ","engpl04"}],"]"}],";"}]}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo03.png\"",","," ","engpl04"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[144]:= ",ExpressionUUID -> "335a956e-9b8a-4a4c-9bb5-780f09b21e63"],Cell[
+BoxData[
+{RowBox[{RowBox[{"engpl06"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[
+{RowBox[{RowBox[{"{",RowBox[{RowBox[{"consum"," ","+"," ","charge"," ","+"," ","perdcharge"}],","," ","consum",","," ","charge"}],"}"}],"/","\n","   ","1000"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b3 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Total Required energy\"",","," ","\n","      ","\"Residential consumption\"",","," ","\"Vehicular Recharge\""}],"}"}],"]"}],","," ",RowBox[
+{"{",RowBox[{".8",","," ",".15"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo04.pdf\"",","," ","engpl06"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo04.png\"",","," ","engpl06"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[199]:= ",ExpressionUUID -> "639d3e20-9c7e-4464-85ec-a7cf98948e99"],Cell[
+TextData[
+{"VALIDA\[CapitalCCedilla]\[CapitalATilde]O"," ","DO"," ","CALCULADO"," ","PELA"," ","METODOLOGIA"," ","ANALITICA"}],
+"Text",ExpressionUUID -> "ef3f09cb-7c6f-4962-89f1-346c574c5e83",FontWeight -> Bold],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"Yf"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"injet","[",RowBox[{"[","n","]"}],"]"}]," ","+"," ",RowBox[
+{"autocons","[",RowBox[{"[","n","]"}],"]"}]}],")"}],"/",RowBox[{"(",RowBox[{"34","*","0.260"}],")"}]}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[
+{"Irdlatmen"," ","="," ",RowBox[{"{",RowBox[{"164.39",","," ","149.42",","," ","167.05",","," ","133.17",","," ","144.28",","," ","118.23",","," ","147.15",","," ","\n","   ","143.1",","," ","132.62",","," ","148",","," ","145.77",","," ","157.1"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"dias"," ","="," ",RowBox[{"{",RowBox[{"31",","," ","28",","," ","31",","," ","30",","," ","31",","," ","30",","," ","31",","," ","31",","," ","30",","," ","31",","," ","30",","," ","31"}],"}"}]}],";"}],"\n",RowBox[
+{RowBox[{"Yr"," ","="," ",RowBox[{"N","[",RowBox[{"Table","[",RowBox[{RowBox[{"Irdlatmen","[",RowBox[
+{"[","n","]"}],"]"}],RowBox[{"(*",RowBox[{RowBox[{"Irdlat","[",RowBox[{"[","n","]"}],"]"}],"*",RowBox[
+{"dias","[",RowBox[{"[","n","]"}],"]"}]}],"*)"}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}],"]"}]}],";"}],"\n",RowBox[
+{"PR"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[{"Yf","[",RowBox[{"[","n","]"}],"]"}],"/",RowBox[
+{"Yr","[",RowBox[{"[","n","]"}],"]"}]}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],"\n",RowBox[
+{"Ecalc3"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"34","*","0.260"}],")"}],"*",RowBox[
+{"Table","[",RowBox[{RowBox[{RowBox[{"Yr","[",RowBox[{"[","n","]"}],"]"}],"*",RowBox[
+{"PR","[",RowBox[{"[","n","]"}],"]"}]}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}]}],RowBox[
+{"\n","\n","\n"}],RowBox[{RowBox[{"PRc"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[
+{"0.83","*",RowBox[{"365","/",RowBox[{"(",RowBox[{"12","*",RowBox[{"dias","[",RowBox[
+{"[","n","]"}],"]"}]}],")"}]}]}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"PRe"," ","="," ","0.83"}],";"}],"\n",RowBox[{RowBox[{"Eideal"," ","="," ",RowBox[
+{RowBox[{"(",RowBox[{"34","*",".260"}],")"}],"*",RowBox[{"(",RowBox[{"Irdlat","*","dias"}],")"}]}]}],";"}],"\n",RowBox[
+{"Ecalc1"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"34","*",".260"}],")"}],"*",RowBox[
+{"(",RowBox[{"Irdlat","*","dias"}],")"}],"*","PRe"}]}],"\n",RowBox[{"Ecalc2"," ","="," ",RowBox[
+{RowBox[{"(",RowBox[{"34","*",".260"}],")"}],"*","Irdlatmen","*","PRe"}]}],RowBox[
+{"\n","\n","\n"}],RowBox[{RowBox[{"engpl07"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[
+{RowBox[{RowBox[{"{",RowBox[{"Ecalc3",","," ",RowBox[{"(",RowBox[{"injet"," ","+"," ","autocons"}],")"}]}],"}"}],"/","1000"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","\n","   ","Automatic",","," ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b3 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Calculated\"",","," ","\"PV*Sol\""}],"}"}],"]"}],","," ",RowBox[{"{",RowBox[
+{".8",","," ",".92"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"engpl08"," ","="," ","\n"," ",RowBox[{"DateListPlot","[",RowBox[{RowBox[
+{RowBox[{"{",RowBox[{RowBox[{"(",RowBox[{"consum"," ","+"," ","charge"," ","+"," ","perdcharge"}],")"}],","," ","\n","    ","Ecalc1",","," ",RowBox[
+{"(",RowBox[{"injet"," ","+"," ","autocons"}],")"}]}],"}"}],"/","1000"}],","," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"2014",","," ","1",","," ","1"}],"}"}],","," ","Automatic",","," ","\n","   ","\"Month\""}],"}"}],",","\n","  ",RowBox[
+{"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[
+{"HoldForm","[","\"Electrical Energy (10\.b3 kWh/month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"PlotLegends"," ","\[Rule]"," ","\n","   ",RowBox[{"Placed","[",RowBox[{RowBox[{"LineLegend","[",RowBox[
+{"{",RowBox[{"\"Required\"",","," ","\"Generated (Calculated)\"",","," ","\n","      ","\"Generated (PV*Sol)\""}],"}"}],"]"}],","," ",RowBox[
+{"{",RowBox[{".8",","," ",".15"}],"}"}]}],"]"}]}],","," ","\n","  ",RowBox[{"PlotStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"Dashing","[","Large","]"}],","," ","\n","     ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}],","," ",RowBox[{"{",RowBox[{"Black",","," ","DotDashed",","," ",RowBox[
+{"Thickness","[","0.0025","]"}]}],"}"}]}],"}"}]}],","," ","\n","  ",RowBox[{"PlotMarkers"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Automatic",","," ","14"}],"}"}]}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo06.pdf\"",","," ","engpl08"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"consumo06.png\"",","," ","engpl08"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[150]:= ",ExpressionUUID -> "fe2ebec3-b9c3-4b7e-9664-966d8bd5a57c"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0.8242456205156098`",",","0.8247864593774662`",",","0.8167610423627465`",",","0.8277906272287624`",",","0.8396600626985989`",",","0.8507030356889305`",",","0.8480026998645455`",",","0.8416589987067234`",",","0.8466787698803985`",",","0.8392067689861809`",",","0.8309416029777276`",",","0.8335260706642741`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[154]= ",ExpressionUUID -> "15d195cb-69bc-427d-87c1-c1508bd2aaac"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1197.8`",",","1089.4379999999999`",",","1206.129`",",","974.4939999999998`",",","1070.932`",",","889.1149999999999`",",","1103.087`",",","1064.702`",",","992.6129999999999`",",","1097.9510000000002`",",","1070.757`",",","1157.571`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[155]= ",ExpressionUUID -> "085df62c-32c0-429d-afd9-7fbdb709a720"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1203.227428`",",","1111.439056`",",","1223.6982159999998`",",","1003.7289599999998`",",","1082.677232`",",","911.2802399999998`",",","1103.1480199999999`",",","1084.9517639999997`",",","983.9185199999998`",",","1078.128168`",",","1067.5626`",",","1139.540532`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[159]= ",ExpressionUUID -> "174edeea-9561-48a4-ac53-49580694679b"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1206.1623079999997`",",","1096.324424`",",","1225.6792599999999`",",","977.0949239999998`",",","1058.611216`",",","867.4771559999999`",",","1079.66898`",",","1049.9533199999998`",",","973.0594639999999`",",","1085.9055999999998`",",","1069.5436439999999`",",","1152.67412`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[160]= ",ExpressionUUID -> "c9084a9e-f595-4751-9a9b-3f8a978f7c2d"]},
+Open],ExpressionUUID -> "10650eb5-0ae3-4ac4-b94c-05e556f195bd"],Cell[
+TextData[{"AN\[CapitalAAcute]LISE"," ","AMBIENTAL"}],
+"Text",ExpressionUUID -> "54b1a938-7194-40f1-868e-d65f29bdc15d",FontWeight -> Bold],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"fc"," ","="," ",RowBox[{"96","/",RowBox[{"10","^","6"}]}]}],";"}],"\n",RowBox[
+{RowBox[{"n"," ","="," ","1"}],";"}],"\n",RowBox[{RowBox[{"l"," ","="," ","87"}],";"}],"\n",RowBox[
+{RowBox[{"d"," ","="," ","dias"}],";"}],"\n",RowBox[{"G1"," ","="," ",RowBox[{"N","[",RowBox[
+{"fc","*","n","*","l","*","d"}],"]"}]}],RowBox[{"\n","\n"}],RowBox[{"Sum","[",RowBox[
+{RowBox[{"G1","[",RowBox[{"[","n","]"}],"]"}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"fs"," ","="," ",RowBox[{"0.139","/","1000"}]}],";"}],"\n",RowBox[
+{"G2"," ","="," ",RowBox[{RowBox[{"(","charge",")"}],"*","fs"}]}],RowBox[{"\n","\n"}],RowBox[
+{"bal"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"absorv"," ","-"," ",RowBox[{"(",RowBox[
+{"injet"," ","+"," ","autocons"}],")"}]}],")"}]," ","fs"}]}],"\n",RowBox[{"G3"," ","="," ",RowBox[
+{"Table","[",RowBox[{RowBox[{"If","[",RowBox[{RowBox[{RowBox[{"bal","[",RowBox[{"[","n","]"}],"]"}]," ",">"," ","0"}],","," ",RowBox[
+{"bal","[",RowBox[{"[","n","]"}],"]"}],","," ","0"}],"]"}],","," ",RowBox[{"{",RowBox[
+{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],RowBox[{"\n","\n"}],RowBox[{"G4"," ","="," ",RowBox[
+{RowBox[{"(",RowBox[{"injet"," ","+"," ","autocons"}],")"}]," ","fs"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"VECo2"," ","="," ",RowBox[{"G1"," ","-"," ","G2"}]}],";"}],"\n",RowBox[
+{RowBox[{"EleCo2"," ","="," ",RowBox[{"G4"," ","-"," ","G3"}]}],";"}],"\n",RowBox[
+{"MenCO2"," ","="," ",RowBox[{"VECo2"," ","+"," ","EleCo2"}]}],"\n",RowBox[{"TotCO2"," ","="," ",RowBox[
+{"Sum","[",RowBox[{RowBox[{"MenCO2","[",RowBox[{"[","n","]"}],"]"}],","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","12"}],"}"}]}],"]"}]}],RowBox[{"\n","\n"}],RowBox[
+{"neutral00"," ","="," ","\n"," ",RowBox[{"BarChart","[",RowBox[{"MenCO2",","," ","\n","  ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Jan\"",","," ","\"Feb\"",","," ","\"Mar\"",","," ","\"Apr\"",","," ","\"May\"",","," ","\"Jun\"",","," ","\"Jul\"",","," ","\n","    ","\"Aug\"",","," ","\"Sep\"",","," ","\"Oct\"",","," ","\"Nov\"",","," ","\"Dec\""}],"}"}]}],","," ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{","Black","}"}]}],","," ","\n","  ",RowBox[
+{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ",RowBox[{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","  ",RowBox[
+{"BaseStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","12"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","  ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],","," ","\n","  ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Month\"",",","  ","\n","    ",RowBox[{"HoldForm","[","\"Neutralized emission (ton CO2/Month)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"Export","[",RowBox[{"\"amb01.pdf\"",","," ","neutral00"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"amb01.png\"",","," ","neutral00"}],"]"}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"fcp"," ","="," ","1.2"}],";"}],"\n",RowBox[{RowBox[
+{"Ima"," ","="," ","2"}],";"}],"\n",RowBox[{RowBox[{"Tc"," ","="," ","0.5"}],";"}],"\n",RowBox[
+{RowBox[{"fcc"," ","="," ",RowBox[{"44","/","12"}]}],";"}],"\n",RowBox[{RowBox[{"t"," ","="," ","20"}],";"}],"\n",RowBox[
+{RowBox[{"ffa"," ","="," ","1667"}],";"}],"\n",RowBox[{RowBox[{"fix"," ","="," ",RowBox[
+{RowBox[{"(",RowBox[{"Ima","  ","Tc","  ","fcc","  ","t"}]," ",")"}],"/","ffa"}]}],";"}],"\n",RowBox[
+{"Ntr"," ","="," ",RowBox[{RowBox[{"(",RowBox[{"TotCO2"," ","fcp"}],")"}],"/","fix"}]}],"\n",RowBox[
+{"A"," ","="," ",RowBox[{RowBox[{"Ntr","/","ffa"}],"*","10000"}]}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Reduct"," ","="," ",RowBox[{"Table","[",RowBox[{"TotCO2",","," ",RowBox[
+{"{",RowBox[{"n",","," ","1",","," ","20"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[{RowBox[
+{"Three"," ","="," ",RowBox[{"Table","[",RowBox[{RowBox[{RowBox[{"(",RowBox[{"n","/","20"}],")"}],"*"," ",RowBox[
+{"Reduct","[",RowBox[{"[","n","]"}],"]"}]}],","," ",RowBox[{"{",RowBox[{"n",","," ","1",","," ","20"}],"}"}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"thr01"," ","="," ",RowBox[{"BarChart","[",RowBox[{"Reduct",","," ","\n","  ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"1\"",","," ","\"2\"",","," ","\"3\"",","," ","\"4\"",","," ","\"5\"",","," ","\"6\"",","," ","\"7\"",","," ","\"8\"",","," ","\"9\"",","," ","\"10\"",","," ","\n","    ","\"11\"",","," ","\"12\"",","," ","\"13\"",","," ","\"14\"",","," ","\"15\"",","," ","\"16\"",","," ","\"17\"",","," ","\"18\"",","," ","\"19\"",","," ","\"20\""}],"}"}]}],","," ","\n","  ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[",".1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","  ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","  ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","  ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],",","\n","  ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Year\"",",","  ","\n","    ",RowBox[{"HoldForm","[","\"Neutralized emission (ton CO2/year)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],"\n",RowBox[
+{RowBox[{"thr02"," ","="," ",RowBox[{"BarChart","[",RowBox[{"Three",","," ","\n","  ",RowBox[
+{"ChartLabels"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"1\"",","," ","\"2\"",","," ","\"3\"",","," ","\"4\"",","," ","\"5\"",","," ","\"6\"",","," ","\"7\"",","," ","\"8\"",","," ","\"9\"",","," ","\"10\"",","," ","\n","    ","\"11\"",","," ","\"12\"",","," ","\"13\"",","," ","\"14\"",","," ","\"15\"",","," ","\"16\"",","," ","\"17\"",","," ","\"18\"",","," ","\"19\"",","," ","\"20\""}],"}"}]}],","," ","\n","  ",RowBox[
+{"ChartStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"Directive","[",RowBox[{"Black",","," ",RowBox[
+{"Opacity","[","1","]"}]}],"]"}],"}"}]}],","," ",RowBox[{"BarSpacing"," ","\[Rule]"," ",".65"}],","," ","\n","  ",RowBox[
+{"PerformanceGoal"," ","\[Rule]"," ","\"Speed\""}],","," ","\n","  ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"Black",","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}],","," ","\n","  ",RowBox[
+{"ImageSize"," ","\[Rule]"," ","600"}],",","\n","  ",RowBox[{"Axes"," ","\[Rule]"," ","False"}],","," ",RowBox[
+{"Frame"," ","\[Rule]"," ","True"}],",","\n","  ",RowBox[{"FrameLabel"," ","\[Rule]"," ",RowBox[
+{"{",RowBox[{"\"Year\"",",","  ","\n","    ",RowBox[{"HoldForm","[","\"Neutralized emission (ton CO2/year)\"","]"}]}],"}"}]}],","," ","\n","  ",RowBox[
+{"LabelStyle"," ","\[Rule]"," ",RowBox[{"{",RowBox[{RowBox[{"Directive","[","Black","]"}],","," ",RowBox[
+{"FontFamily"," ","\[Rule]"," ","\"Helvetica\""}],","," ","14"}],"}"}]}]}],"]"}]}],";"}],RowBox[
+{"\n","\n"}],RowBox[{RowBox[{"balanco03"," ","="," ",RowBox[{"Show","[",RowBox[{RowBox[
+{"{","\n","   ",RowBox[{"thr01",",","\n","   ","thr02"}],"}"}],","," ",RowBox[{"Axes"," ","\[Rule]"," ","True"}],","," ",RowBox[
+{"PlotRange"," ","\[Rule]"," ","All"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],RowBox[
+{RowBox[{"Export","[",RowBox[{"\"amb02.pdf\"",","," ","balanco03"}],"]"}],";"}],"\n",RowBox[
+{RowBox[{"Export","[",RowBox[{"\"amb02.png\"",","," ","balanco03"}],"]"}],";"}]}],
+"Input",CellLabel -> "In[165]:= ",ExpressionUUID -> "633b417f-70fd-4850-bf54-40dc09ed065f"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0.258912`",",","0.233856`",",","0.258912`",",","0.25056`",",","0.258912`",",","0.25056`",",","0.258912`",",","0.258912`",",","0.25056`",",","0.258912`",",","0.25056`",",","0.258912`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[169]= ",ExpressionUUID -> "55ba6f85-3ca7-4a1d-b652-11d482011224"],Cell[
+BoxData[
+"3.0484800000000005`",StandardForm],"Output",CellLabel -> "Out[170]= ",ExpressionUUID -> "af9ae084-d93f-4d33-b53f-d7bbeeb6cfbf"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0.05336627000000001`",",","0.049817600000000004`",",","0.05514825000000001`",",","0.053373220000000006`",",","0.05515242`",",","0.053373220000000006`",",","0.05515242`",",","0.05515242`",",","0.053373220000000006`",",","0.05515242`",",","0.053373220000000006`",",","0.05515242`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[172]= ",ExpressionUUID -> "e297332e-16c6-4112-bd99-1a08be3948a9"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{RowBox[{"-","0.004003199999999994`"}],",",RowBox[{"-","0.0028964819999999954`"}],",","0.0069459690000000015`",",","0.039643634000000025`",",",RowBox[
+{"-","0.032038388`"}],",",RowBox[{"-","0.014330205000000006`"}],",",RowBox[{"-","0.03751707300000001`"}],",","0.014942222000000008`",",","0.029827593000000017`",",","0.015463611000000006`",",","0.012543776999999994`",",","0.003840431000000019`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[173]= ",ExpressionUUID -> "394bc1ed-03ae-410c-bffe-5efaefd67657"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0",",","0",",","0.0069459690000000015`",",","0.039643634000000025`",",","0",",","0",",","0",",","0.014942222000000008`",",","0.029827593000000017`",",","0.015463611000000006`",",","0.012543776999999994`",",","0.003840431000000019`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[174]= ",ExpressionUUID -> "dbf69de0-d420-4b3c-8a27-18b5ce64ccd1"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0.1664942`",",","0.151431882`",",","0.167651931`",",","0.135454666`",",","0.148859548`",",","0.12358698500000001`",",","0.15332909300000003`",",","0.14799357800000001`",",","0.13797320700000001`",",","0.152615189`",",","0.14883522300000002`",",","0.16090236900000002`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[175]= ",ExpressionUUID -> "ecce4523-8949-4e8b-911b-cc7526405414"],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"0.37203993`",",","0.33547028199999995`",",","0.364469712`",",","0.29299781199999997`",",","0.35261912799999995`",",","0.320773765`",",","0.357088673`",",","0.336810936`",",","0.305332394`",",","0.34091115799999994`",",","0.333478226`",",","0.36082151799999995`"}],"}"}],
+StandardForm],"Output",CellLabel -> "Out[178]= ",ExpressionUUID -> "55a8def8-c5d5-4f97-a0de-054dbba2845e"],Cell[
+BoxData[
+"4.072813534`",StandardForm],"Output",CellLabel -> "Out[179]= ",ExpressionUUID -> "bf7eeddc-1008-4863-b548-138af0e9c775"],Cell[
+BoxData[
+GraphicsBox[{{Opacity[0],PointBox[{{0.4648484848484848`,0.`},{12.303030303030303`,0.`}}]},{{},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],RGBColor[0.982864`,0.7431472`,
+0.3262672`]],{{Directive[EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[
+0]],RectangleBox[{0.6969696969696969`,0.`},{1.3030303030303028`,0.37203993`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{1.6969696969696968`,0.`},{2.3030303030303028`,0.33547028199999995`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{2.696969696969697`,0.`},{3.3030303030303028`,0.364469712`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{3.696969696969697`,0.`},{4.303030303030303`,0.29299781199999997`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{4.696969696969696`,0.`},{5.303030303030303`,0.35261912799999995`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{5.696969696969696`,0.`},{6.303030303030303`,0.320773765`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{6.696969696969696`,0.`},{7.303030303030303`,0.357088673`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{7.696969696969696`,0.`},{8.303030303030303`,0.336810936`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{8.696969696969697`,0.`},{9.303030303030303`,0.305332394`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{9.696969696969697`,0.`},{10.303030303030303`,0.34091115799999994`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{10.696969696969697`,0.`},{11.303030303030303`,0.333478226`},"RoundingRadius" -> 0]},{Directive[
+EdgeForm[Directive[Thickness[Small],Opacity[0.616`]]],GrayLevel[0]],RectangleBox[
+{11.696969696969697`,0.`},{12.303030303030303`,0.36082151799999995`},"RoundingRadius" -> 0]}}},{},{}},{},{},{},{},{}},
+{DisplayFunction -> Identity,AspectRatio -> NCache[Power[GoldenRatio,-1],0.6180339887498948`],Axes -> {False,False},AxesLabel -> {None,None},AxesOrigin -> {0.4648484848484848`,0.`},BaseStyle -> {GrayLevel[
+0],FontFamily -> "Helvetica",12},CoordinatesToolOptions -> CompressedData["1:eJxTTMoPSmNiYGAoZgESPpnFJQheUGlOajA/kOGSWVyQk1jpVpqXXJKZn5fGCFLBASTgIqgmwOU9U1LzSjJLKhHyAYlFUHkQLzgnvyQTxAMT5OgDKUBzsTCQ4ZxfkJmaEpaYU5o6WF0NAFk5TEk="],Frame -> True,FrameLabel -> {{FormBox[
+TagBox[TagBox["\"Neutralized emission (ton CO2/Month)\"",HoldForm],HoldForm],TraditionalForm],None},{FormBox[
+TagBox["\"Month\"",HoldForm],TraditionalForm],None}},FrameTicks -> CompressedData[
+"1:eJzNls9KxDAQxus/VBT04GEPHrSIePUJ1hXZg7gK1hdIa5RCuwlpKvpIvo4vIt7F3WRnF1qZlebkl0OaCZ3p92tp5jtO1f3TahRF1bqbbvLKtqNq2y0GtVWlsHnWjn7l9VrRWjMyPxM/PvuUsummoTLlpXqljR03PchSF8JKv7nSTM7dNUp8TqJFJs15tedvN+Ixt7kai8KXamsx3+9fH6NU92e5XbUkG24dX4txzD2BKzWhAYG1VAthDWXaGSuaja0LBKylWghrJEwg1j4QFqOFsAY6FOsACIvRsvhab4FYPSAsRsv8yKi7HxlU6hAIi9GywCoCsY6AsBgt83+rfg7EioGwGC2ElUgdiHUChMVoIay7zAZinQJhMVoI61a9BGKdAWExWgjrSmZ/YO02SwE7RCRbRy8cyYshGSgk14NkVZD8BZIpQOrkSO0XqWf+U6ObAhRLCvU="],GridLines -> {None,None},GridLinesStyle -> Directive[
+GrayLevel[0.5`,0.4`]],ImageSize -> 600,LabelStyle -> {Directive[GrayLevel[0]],FontFamily -> "Helvetica",14},PlotRange -> {{All,All},{All,All}},PlotRangePadding -> {{Scaled[
+0.02`],Scaled[0.02`]},{None,Scaled[0.05`]}},Ticks -> {None,Automatic}}],StandardForm],
+"Output",CellLabel -> "Out[180]= ",ExpressionUUID -> "96a0da35-518d-4369-a4e4-6e0175205d6d"],Cell[
+BoxData[
+"111.09894809200362`",StandardForm],"Output",CellLabel -> "Out[190]= ",ExpressionUUID -> "9a506730-4db6-4d34-b1ad-2e84cbe31c35"],Cell[
+BoxData[
+"666.4603964727271`",StandardForm],"Output",CellLabel -> "Out[191]= ",ExpressionUUID -> "90a12353-b516-4479-af1f-b0a4c4dee086"]},
+Open],ExpressionUUID -> "b7f6dd76-274f-43e1-b4a6-2508ac84cac5"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "14. for Wolfram Cloud 1.68.0.1 (June 2, 2024)"]
